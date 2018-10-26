@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+
+  tornado:
+    image: "registry.cn-shenzhen.aliyuncs.com/iqing/py3-base:3.6-slim"
+    depends_on:
+    environment:
+      - REDIS_PORT_6379_TCP_ADDR=redis
+      - REDIS_PORT_6379_TCP_PORT=6379
+      - ES_PORT_9200_TCP_ADDR=es
+      - MONGO_PORT_27017_TCP_ADDR=mongo
+      - DJANGO_SETTINGS_MODULE=iqing.settings_loca_test
+      - POI_HOST=poi.example.com
+    volumes:
+     - /home/sc/Pictures/Tornado-JSON/demos/helloworld:/wwwroot/www
+    ports:
+    - "8081:8081"
+    command:
+      - 'sleep'
+      - '9999999999999999'
