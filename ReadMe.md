@@ -1,4 +1,4 @@
-
+第一次自己写的tornado程序 主要是为了尝试异步优化DRF的框架
 
 anaconda search -t conda tornado-celery
 
